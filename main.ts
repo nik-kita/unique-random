@@ -1,10 +1,12 @@
 import { Hono } from "hono/mod.ts";
-import ui from "./src/home.ui.tsx";
-import todo from "./src/todo.ui.tsx";
+import api from "./api/api.ts";
+import ui from "./ui/home.ui.tsx";
 
 const app = new Hono();
 
-app.route("/", ui).route("/todo", todo);
+app
+  .route("/api", api)
+  .route("/", ui);
 
 Deno.serve({
   port: 3000,

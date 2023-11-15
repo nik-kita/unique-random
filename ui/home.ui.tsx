@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "hono/middleware.ts";
 import { Context, Hono, LinearRouter, TrieRouter } from "hono/mod.ts";
+import todo from "./todo.ui.tsx";
 
 const ui = new Hono({ router: new LinearRouter() });
 
+ui.route("/todo", todo);
 ui.get("/", (c: Context) => {
   return c.html(
     <div>
