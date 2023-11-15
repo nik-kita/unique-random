@@ -1,11 +1,10 @@
-import { Context, Hono } from "hono/mod.ts";
+import { Hono } from "hono/mod.ts";
+import ui from "./src/home.ui.tsx";
+import todo from "./src/todo.ui.tsx";
 
 const app = new Hono();
 
-app.get(
-  "/",
-  (c: Context) => c.render(`<h1>// TODO add documentation</h1></hr>`),
-);
+app.route("/", ui).route("/todo", todo);
 
 Deno.serve({
   port: 3000,
