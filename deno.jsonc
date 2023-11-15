@@ -3,6 +3,7 @@
     "dev": "deno run -A main.ts --watch"
   },
   "imports": {
-    "hono/": "https://deno.land/x/hono@v3.10.0/"
+    "hono/": "https://deno.land/x/hono@v3.10.0/",
+    "$std/": "https://deno.land/std@0.206.0/"
   }
 }
